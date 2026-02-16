@@ -51,21 +51,21 @@ const RegionCard = ({
   const items = desc.split(',').map(s => s.trim());
   
   return (
-    <div className={`relative bg-gray-800/60 backdrop-blur-md rounded-xl p-3 md:p-4 border border-gray-700 ${hoverBorder} transition-all duration-300 group hover:bg-gray-800/80 hover:shadow-lg`}>
+    <div className={`relative bg-gray-800/60 backdrop-blur-md rounded-lg p-2.5 md:p-3 border border-gray-700 ${hoverBorder} transition-all duration-300 group hover:bg-gray-800/80 hover:shadow-lg`}>
       {/* Side Accent Line */}
-      <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${borderColor} rounded-l-xl`}></div>
+      <div className={`absolute left-0 top-0 bottom-0 w-1 ${borderColor} rounded-l-lg`}></div>
       
-      <div className="pl-3 md:pl-4">
-        <div className="flex items-center gap-2 mb-2 md:mb-3">
-           <MapPin className={`${iconColor} group-hover:scale-110 transition-transform duration-300 w-4 h-4 md:w-5 md:h-5`} />
-           <h3 className="text-lg md:text-xl font-serif font-bold text-white tracking-wide group-hover:text-white/90">{title}</h3>
+      <div className="pl-3">
+        <div className="flex items-center gap-2 mb-1.5 md:mb-2">
+           <MapPin className={`${iconColor} group-hover:scale-110 transition-transform duration-300 w-4 h-4`} />
+           <h3 className="text-base md:text-lg font-serif font-bold text-white tracking-wide group-hover:text-white/90">{title}</h3>
         </div>
 
-        <div className="flex flex-wrap gap-1.5 md:gap-2">
+        <div className="flex flex-wrap gap-1.5">
            {items.map((item, i) => (
              <span 
                key={i} 
-               className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 bg-gray-900/50 rounded-md border border-gray-600 text-gray-200 text-xs md:text-sm lg:text-base font-medium hover:bg-gray-700 hover:text-white hover:border-gray-500 transition-all shadow-sm cursor-default"
+               className="inline-block px-2 py-0.5 bg-gray-900/50 rounded border border-gray-600 text-gray-300 text-[10px] md:text-xs lg:text-sm font-medium hover:bg-gray-700 hover:text-white hover:border-gray-500 transition-all shadow-sm cursor-default"
              >
                {item}
              </span>
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
             initial={{ scale: 1 }}
             animate={{ scale: 1.1 }}
             transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-            src="/assets/images/hero_bg.png" 
+            src="/images/hero_bg.png" 
             onError={(e) => e.currentTarget.src = "https://picsum.photos/seed/cornfield/1920/1080"}
             alt="Fresh Corn Field" 
             className="w-full h-full object-cover"
@@ -236,7 +236,7 @@ const Home: React.FC = () => {
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-brand-yellow rounded-full opacity-20"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-brand-green rounded-full opacity-10"></div>
               <img 
-                src="/assets/images/wonderful-lorry.png" 
+                src="/images/wonderful-lorry.png" 
                 onError={(e) => e.currentTarget.src = "https://picsum.photos/seed/delivery/800/600"}
                 alt="Delivery Truck" 
                 className="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[400px]"
@@ -358,7 +358,7 @@ const Home: React.FC = () => {
                  className="w-full max-w-xl relative z-10"
               >
                 <img 
-                  src="/assets/images/delivery_map.png"
+                  src="/images/delivery_map.png"
                   onError={(e) => e.currentTarget.src = "https://placehold.co/600x750/111827/facc15?text=Map+Placeholder"}
                   alt="Delivery Map" 
                   className="w-full h-auto object-contain drop-shadow-2xl rounded-lg"

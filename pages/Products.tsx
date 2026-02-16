@@ -51,7 +51,7 @@ const Products: React.FC = () => {
 
   // Define the 9 highlights requested
   // 1. Corns, 2. Sweet Potato, 3. Ubi Kayu, 4. Yam Bean, 5. Local Yam, 
-  // 6. Amra Fruit, 7. Jackfruit, 8. Pumpkin, 9. Winter Melon
+  // 6. Amra Fruit, 7. Chili Kulai, 8. Pumpkin, 9. Pineapple
   const highlights = [
     { 
       key: 'corns',
@@ -90,10 +90,10 @@ const Products: React.FC = () => {
       targetId: 'f2' 
     },
     { 
-      key: 'jackfruit',
-      label: findProd('fr2')?.name, 
-      image: findProd('fr2')?.image, 
-      targetId: 'fr2' 
+      key: 'chilikulai',
+      label: findProd('v4')?.name, 
+      image: findProd('v4')?.image, 
+      targetId: 'v4' 
     },
     { 
       key: 'pumpkin',
@@ -102,47 +102,13 @@ const Products: React.FC = () => {
       targetId: 'v2' 
     },
     { 
-      key: 'wintermelon',
-      label: findProd('v3')?.name, 
-      image: findProd('v3')?.image, 
-      targetId: 'v3' 
+      key: 'pineapple',
+      label: findProd('fr3')?.name, 
+      image: findProd('fr3')?.image, 
+      targetId: 'fr3' 
     }
   ];
 
-  // Specific Order for Categories
-  const categoryOrder = [
-    'CORN SERIES', 
-    'ROOTS & TUBERS', 
-    'FRUITS', 
-    'VEGETABLES'
-  ];
-
-  // Map category keys (EN) to translated display names
-  // We use the first product in the category to get the translated category name, 
-  // or fall back to the raw key if empty.
-  const getTranslatedCategoryName = (catKey: string) => {
-    const prod = products.find(p => {
-        // We need to check against the internal category key logic. 
-        // Since `product.category` is already translated in `getProducts`,
-        // we need to find a product that *corresponds* to the English key.
-        // However, `getProducts` returns translated category strings directly.
-        // So we just iterate the `products` and match the grouping.
-        return true; 
-    });
-    // Simpler approach: Filter products by the translated category string found in the data
-    return products.find(p => p.category)?.category || catKey;
-  };
-  
-  // Actually, `getProducts` returns products where `.category` is ALREADY translated.
-  // We need to group them. But we want to maintain the specific order of Sections.
-  // The safest way is to look at the `data.tsx` mapping logic, but here we only have the output list.
-  // We can group by unique category strings found in the list, but we want to Sort them 
-  // according to: Corns -> Roots -> Fruits -> Vegetables.
-  
-  // Let's create a map of English Key -> Translated String based on `data.tsx` logic
-  // Re-importing logic here is messy.
-  // Better strategy: Filter the `products` list based on known IDs or subsets for each section.
-  
   const sections = [
     { 
       id: 'corn', 
@@ -157,12 +123,12 @@ const Products: React.FC = () => {
     { 
       id: 'fruits', 
       title: language === 'bm' ? 'BUAH-BUAHAN' : language === 'cn' ? '水果系列' : 'FRUITS',
-      items: products.filter(p => ['f2', 'fr2'].includes(p.id))
+      items: products.filter(p => ['f2', 'fr3'].includes(p.id))
     },
     { 
       id: 'veg', 
-      title: language === 'bm' ? 'SAYUR-SAYURAN' : language === 'cn' ? '蔬菜系列' : 'VEGETABLES',
-      items: products.filter(p => ['v2', 'v3'].includes(p.id))
+      title: language === 'bm' ? 'SAYUR-SAYURAN & LAIN-LAIN' : language === 'cn' ? '蔬菜与其他' : 'VEGETABLES & OTHERS',
+      items: products.filter(p => ['v2', 'v3', 'v4', 'v5', 'v6'].includes(p.id))
     }
   ];
 

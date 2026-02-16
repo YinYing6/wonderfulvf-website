@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
             {/* 1. Logo Icon Image - Responsive Size */}
             <div className="relative">
                  <img 
-                  src="/assets/images/logo.png" 
+                  src="/images/logo.png" 
                   onError={(e) => handleImageError(e, 'logo')}
                   alt="Wonderful V&F Logo" 
                   className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 object-contain group-hover:scale-105 transition-transform"
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
             <div className="flex items-center gap-2 md:gap-2 lg:gap-3">
               {/* 2. Rainbow "Wonderful" Text Image - Responsive Height */}
               <img 
-                src="/assets/images/wonderful_text.png" 
+                src="/images/wonderful_text.png" 
                 onError={(e) => handleImageError(e, 'text')}
                 alt="Wonderful" 
                 className="h-6 md:h-8 lg:h-10 w-auto object-contain" 

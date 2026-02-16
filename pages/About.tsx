@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { getTimeline } from '../data';
-import { ShieldCheck, Truck, Sprout, Thermometer, Eye, Award, Camera } from 'lucide-react';
+import { ShieldCheck, Handshake, Thermometer, Eye, Camera, Clock, Sprout, ChevronRight, ChevronsRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
@@ -57,42 +57,52 @@ const About: React.FC = () => {
   // GALLERY SETTINGS
   // ----------------------------------------------------------------------------------
   // HOW TO ADD YOUR OWN PHOTOS:
-  // 1. Upload your image files (e.g., 'warehouse.jpg') to the 'assets/images/' folder.
+  // 1. Upload your image files (e.g., 'warehouse.jpg') to the 'public/images/' folder.
   // 2. Edit the list below.
-  //    - Change 'src' to: "/assets/images/your_filename.jpg"
+  //    - Change 'src' to: "/images/your_filename.jpg"
   //    - Change 'alt' to: "Your Description"
   // ----------------------------------------------------------------------------------
   const galleryImages = [
     { 
-      src: "https://picsum.photos/seed/factory1/600/400", // Example: "/assets/images/warehouse.jpg"
-      alt: "Warehouse Operations"                          // Description shown on hover
+      src: "/images/penang-company.png", // Example: "/images/warehouse.jpg"
+      alt: "Penang Company"                          // Description shown on hover
     },
     { 
-      src: "/assets/images/wonderful-lorry.png",   
+      src: "/images/wonderful-lorry.png",   
       alt: "Delivery Fleet" 
     },
     { 
-      src: "https://picsum.photos/seed/sorting/600/400", 
-      alt: "Sorting Facility" 
+      src: "/images/johor-company.png", 
+      alt: "Johor Company" 
+    },
+  ];
+
+  const farmImages = [
+    { 
+      src: "/images/farm/yambean-farm.png", 
+      alt: "Yam Bean Farm" 
     },
     { 
-      src: "https://picsum.photos/seed/cornstack/600/400", 
-      alt: "Fresh Harvest" 
+      src: "/images/farm/sweetpotato-farm.png", 
+      alt: "Sweet Potato Farm" 
     },
     { 
-      src: "https://picsum.photos/seed/team/600/400", 
-      alt: "Our Team" 
+      src: "/images/farm/pineapple-farm.png", 
+      alt: "Pineapple Farm" 
     },
     { 
-      src: "https://picsum.photos/seed/loading/600/400", 
-      alt: "Loading Dock" 
+      src: "/images/farm/pumpkin-bulk.png", 
+      alt: "Pumpkin Bulk" 
     },
-    // You can copy the block above to add more images
+    { 
+      src: "/images/farm/sweetcorn-farm.png", 
+      alt: "Sweet Corn Farm" 
+    },
   ];
 
   const pillars = [
     {
-      icon: <Sprout size={32} />,
+      icon: <Handshake size={32} />,
       title: t.aboutPage.pillars.farm,
       desc: t.aboutPage.pillars.farmDesc,
       color: "bg-green-100 text-green-600"
@@ -110,7 +120,7 @@ const About: React.FC = () => {
       color: "bg-purple-100 text-purple-600"
     },
     {
-      icon: <Truck size={32} />,
+      icon: <Clock size={32} />,
       title: t.aboutPage.pillars.coldChain,
       desc: t.aboutPage.pillars.coldChainDesc,
       color: "bg-orange-100 text-orange-600"
@@ -188,49 +198,108 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* NEW: Interactive Company Gallery Section */}
-        <div className="mb-32">
+        {/* Existing Gallery Section: Our Operations in Action */}
+        <div className="mb-20">
            <div className="flex items-center justify-center gap-3 mb-10">
              <Camera className="text-brand-green w-8 h-8" />
              <h2 className="text-3xl font-bold text-center text-brand-dark">{t.aboutPage.galleryTitle}</h2>
            </div>
            
-           {/* Horizontal Scroll Container */}
-           <div 
-             className="flex overflow-x-auto gap-6 pb-12 px-4 snap-x snap-mandatory no-scrollbar"
-             style={{ scrollBehavior: 'smooth' }}
-           >
-             {galleryImages.map((img, idx) => (
-               <motion.div 
-                 key={idx}
-                 className="flex-shrink-0 w-[85vw] sm:w-80 md:w-96 h-64 md:h-72 rounded-2xl overflow-hidden shadow-md hover:shadow-xl snap-center relative group border border-gray-100"
-                 whileHover={{ scale: 1.02 }}
-                 transition={{ duration: 0.3 }}
-               >
-                 <img 
-                   src={img.src} 
-                   alt={img.alt} 
-                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                   onError={(e) => {
-                     // Fallback if image not found
-                     e.currentTarget.src = `https://placehold.co/600x400/e2e8f0/166534?text=${encodeURIComponent(img.alt)}`;
-                   }}
-                 />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                   <p className="text-white font-bold">{img.alt}</p>
-                 </div>
-               </motion.div>
-             ))}
-             
-             {/* Add More Placeholder (Optional, visual indicator that more can be added) */}
-             <div className="flex-shrink-0 w-24 h-64 md:h-72 flex items-center justify-center rounded-2xl bg-gray-100 border-2 border-dashed border-gray-300 snap-center">
-                 <span className="text-gray-400 font-medium rotate-90 whitespace-nowrap">Wonderful V&F</span>
+           <div className="relative">
+             {/* Right-aligned Vertical Scroll Indicator */}
+             <div className="absolute right-0 top-0 bottom-0 z-20 pointer-events-none flex items-center justify-end w-20 bg-gradient-to-l from-white/60 to-transparent rounded-r-2xl">
+                <div className="bg-white/90 backdrop-blur-md py-4 px-1.5 rounded-l-xl shadow-lg border-y border-l border-emerald-50 flex flex-col items-center gap-2 animate-pulse mr-2">
+                   <ChevronsRight className="text-brand-green w-5 h-5" />
+                   <span className="text-[10px] font-bold text-emerald-900 tracking-widest uppercase whitespace-nowrap" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+                     {t.hero.scroll} &gt;&gt;
+                   </span>
+                </div>
+             </div>
+
+             {/* Horizontal Scroll Container */}
+             <div 
+               className="flex overflow-x-auto gap-6 pb-12 px-4 snap-x snap-mandatory no-scrollbar"
+               style={{ scrollBehavior: 'smooth' }}
+             >
+               {galleryImages.map((img, idx) => (
+                 <motion.div 
+                   key={idx}
+                   className="flex-shrink-0 w-[85vw] sm:w-80 md:w-96 h-64 md:h-72 rounded-2xl overflow-hidden shadow-md hover:shadow-xl snap-center relative group border border-gray-100"
+                   whileHover={{ scale: 1.02 }}
+                   transition={{ duration: 0.3 }}
+                 >
+                   <img 
+                     src={img.src} 
+                     alt={img.alt} 
+                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                     onError={(e) => {
+                       // Fallback if image not found
+                       e.currentTarget.src = `https://placehold.co/600x400/e2e8f0/166534?text=${encodeURIComponent(img.alt)}`;
+                     }}
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                     <p className="text-white font-bold">{img.alt}</p>
+                   </div>
+                 </motion.div>
+               ))}
+             </div>
+           </div>
+        </div>
+
+        {/* NEW: Farm Gallery Section */}
+        <div className="mb-32">
+           <div className="flex items-center justify-center gap-3 mb-10">
+             <Sprout className="text-brand-green w-8 h-8" />
+             <h2 className="text-3xl font-bold text-center text-brand-dark">{t.aboutPage.farmGalleryTitle}</h2>
+           </div>
+           
+           <div className="relative">
+             {/* Right-aligned Vertical Scroll Indicator */}
+             <div className="absolute right-0 top-0 bottom-0 z-20 pointer-events-none flex items-center justify-end w-20 bg-gradient-to-l from-white/60 to-transparent rounded-r-2xl">
+                <div className="bg-white/90 backdrop-blur-md py-4 px-1.5 rounded-l-xl shadow-lg border-y border-l border-emerald-50 flex flex-col items-center gap-2 animate-pulse mr-2">
+                   <ChevronsRight className="text-brand-green w-5 h-5" />
+                   <span className="text-[10px] font-bold text-emerald-900 tracking-widest uppercase whitespace-nowrap" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+                     {t.hero.scroll} &gt;&gt;
+                   </span>
+                </div>
+             </div>
+
+             {/* Horizontal Scroll Container */}
+             <div 
+               className="flex overflow-x-auto gap-6 pb-12 px-4 snap-x snap-mandatory no-scrollbar"
+               style={{ scrollBehavior: 'smooth' }}
+             >
+               {farmImages.map((img, idx) => (
+                 <motion.div 
+                   key={idx}
+                   className="flex-shrink-0 w-[85vw] sm:w-80 md:w-96 h-64 md:h-72 rounded-2xl overflow-hidden shadow-md hover:shadow-xl snap-center relative group border border-gray-100"
+                   whileHover={{ scale: 1.02 }}
+                   transition={{ duration: 0.3 }}
+                 >
+                   <img 
+                     src={img.src} 
+                     alt={img.alt} 
+                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                     onError={(e) => {
+                       e.currentTarget.src = `https://placehold.co/600x400/e2e8f0/166534?text=${encodeURIComponent(img.alt)}`;
+                     }}
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                     <p className="text-white font-bold">{img.alt}</p>
+                   </div>
+                 </motion.div>
+               ))}
+               
+               {/* Placeholder for adding more */}
+               <div className="flex-shrink-0 w-24 h-64 md:h-72 flex items-center justify-center rounded-2xl bg-gray-100 border-2 border-dashed border-gray-300 snap-center">
+                   <span className="text-gray-400 font-medium rotate-90 whitespace-nowrap">Wonderful V&F</span>
+               </div>
              </div>
            </div>
         </div>
 
         {/* Quality Assurance Section */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 overflow-hidden relative border border-gray-100">
+        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 overflow-hidden relative border border-gray-100 mb-20">
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-green/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
 
@@ -260,39 +329,6 @@ const About: React.FC = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Certifications - Simple strip */}
-        <div className="mt-20 text-center">
-          <h2 className="text-3xl font-bold text-brand-dark mb-12 flex items-center justify-center gap-3">
-             <Award className="text-brand-yellow" size={32} />
-             {t.aboutPage.certifications}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-             {/* HACCP */}
-             <div className="flex flex-col items-center group w-48">
-                <div className="w-24 h-24 bg-white shadow-md rounded-full flex items-center justify-center border-4 border-gray-50 mb-4 group-hover:border-red-500 transition-colors duration-300">
-                  <span className="font-extrabold text-xl text-red-600">HACCP</span>
-                </div>
-                <span className="text-sm font-medium text-gray-600 px-4">{t.aboutPage.certList.haccp}</span>
-             </div>
-
-             {/* SMETA */}
-             <div className="flex flex-col items-center group w-48">
-                <div className="w-24 h-24 bg-white shadow-md rounded-full flex items-center justify-center border-4 border-gray-50 mb-4 group-hover:border-blue-500 transition-colors duration-300">
-                  <span className="font-extrabold text-xl text-blue-600">SMETA</span>
-                </div>
-                <span className="text-sm font-medium text-gray-600 px-4">{t.aboutPage.certList.smeta}</span>
-             </div>
-
-             {/* Halal */}
-             <div className="flex flex-col items-center group w-48">
-                <div className="w-24 h-24 bg-white shadow-md rounded-full flex items-center justify-center border-4 border-gray-50 mb-4 group-hover:border-brand-green transition-colors duration-300">
-                  <span className="font-extrabold text-xl text-brand-green">Halal</span>
-                </div>
-                <span className="text-sm font-medium text-gray-600 px-4">{t.aboutPage.certList.halal}</span>
-             </div>
           </div>
         </div>
 

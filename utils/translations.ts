@@ -62,23 +62,18 @@ export const translations = {
       subtitle: 'Built on trust, quality, and a passion for fresh produce since 2001.',
       journey: 'Our Corporate Journey',
       galleryTitle: 'Our Operations in Action',
+      farmGalleryTitle: 'Fresh from Our Farms',
       qualityTitle: 'Uncompromising Quality Standards',
-      qualityDesc: 'We enforce a zero-tolerance quality policy through our 4-Pillar Freshness Assurance System.',
+      qualityDesc: 'We ensure freshness through a hands-on, speed-focused approach.',
       pillars: {
-        farm: 'Farm Selection',
-        farmDesc: 'MyGAP-certified farms with daily soil-to-harvest audits.',
+        farm: 'Direct Farm Partnerships',
+        farmDesc: 'We source directly from a trusted network of local growers, ensuring produce is harvested only when it reaches peak maturity.',
         postHarvest: 'Post-Harvest Handling',
-        postHarvestDesc: 'Temperature-controlled staging (4°C) and hydro-cooling.',
-        inspection: 'Inspection Protocol',
-        inspectionDesc: '30% random farm sampling and 100% visual grading at warehouse.',
-        coldChain: 'Cold Chain Integrity',
-        coldChainDesc: 'GPS-tracked refrigerated trucks (2-4°C) with IoT monitoring.'
-      },
-      certifications: 'Certified Excellence',
-      certList: {
-        haccp: 'Compliant processes',
-        smeta: 'Ethical sourcing audits',
-        halal: 'Certified handling'
+        postHarvestDesc: 'Temperature-controlled staging (4°C) and hydro-cooling to lock in crispness immediately after arrival.',
+        inspection: 'Visual Quality Screening',
+        inspectionDesc: 'Every basket undergoes a thorough manual inspection by our team to filter out defects before it reaches your door.',
+        coldChain: 'Daily "Harvest-to-Door" Cycle',
+        coldChainDesc: 'Our signature speed—produce is harvested in the early morning and dispatched immediately, minimizing storage time.'
       }
     },
     faqPage: {
@@ -187,23 +182,18 @@ export const translations = {
       subtitle: 'Dibina atas kepercayaan, kualiti, dan semangat untuk hasil segar sejak 2001.',
       journey: 'Perjalanan Korporat Kami',
       galleryTitle: 'Operasi Kami Beraksi',
+      farmGalleryTitle: 'Segar dari Ladang Kami',
       qualityTitle: 'Standard Kualiti Tanpa Kompromi',
-      qualityDesc: 'Kami menguatkuasakan dasar kualiti sifar toleransi melalui Sistem Jaminan Kesegaran 4-Teras kami.',
+      qualityDesc: 'Kami memastikan kesegaran melalui pendekatan praktikal yang berfokuskan kepantasan.',
       pillars: {
-        farm: 'Pemilihan Ladang',
-        farmDesc: 'Ladang bersijil MyGAP dengan audit harian dari tanah ke tuaian.',
+        farm: 'Perkongsian Ladang Langsung',
+        farmDesc: 'Kami mendapatkan sumber terus daripada rangkaian penanam tempatan yang dipercayai, memastikan hasil dituai hanya apabila ia mencapai kematangan puncak.',
         postHarvest: 'Pengendalian Pasca-Tuai',
-        postHarvestDesc: 'Kawasan berhawa dingin (4°C) dan penyejukan hidro.',
-        inspection: 'Protokol Pemeriksaan',
-        inspectionDesc: '30% persampelan rawak ladang dan 100% penggredan visual di gudang.',
-        coldChain: 'Integriti Rantaian Sejuk',
-        coldChainDesc: 'Lori sejuk beku ber-GPS (2-4°C) dengan pemantauan IoT.'
-      },
-      certifications: 'Kecemerlangan Diperakui',
-      certList: {
-        haccp: 'Proses pematuhan',
-        smeta: 'Audit penyumberan etika',
-        halal: 'Pengendalian disahkan'
+        postHarvestDesc: 'Peringkat kawalan suhu (4°C) dan penyejukan hidro untuk mengekalkan kerenyahan sejurus selepas ketibaan.',
+        inspection: 'Saringan Kualiti Visual',
+        inspectionDesc: 'Setiap bakul melalui pemeriksaan manual yang teliti oleh pasukan kami untuk menapis kecacatan sebelum sampai ke pintu anda.',
+        coldChain: 'Kitaran "Tuai-ke-Pintu" Harian',
+        coldChainDesc: 'Kelajuan istimewa kami—hasil dituai pada awal pagi dan dihantar serta-merta, meminimumkan masa penyimpanan.'
       }
     },
     faqPage: {
@@ -268,7 +258,7 @@ export const translations = {
       subtitle: '农场直接取货和当日送达，保证为您的企业提供最新鲜的库存。',
       ctaPrice: '联系询价',
       ctaProducts: '查看产品',
-      scroll: '下滑查看更多',
+      scroll: '右滑查看更多',
     },
     stats: {
       corns: '过去一年售出的玉米',
@@ -312,23 +302,18 @@ export const translations = {
       subtitle: '自2001年以来，建立在信任、质量和对新鲜农产品的热情之上。',
       journey: '我们的企业历程',
       galleryTitle: '我们的运营实况',
+      farmGalleryTitle: '源自我们农场的新鲜',
       qualityTitle: '不妥协的质量标准',
-      qualityDesc: '我们通过“4大支柱新鲜保证系统”执行零容忍质量政策。',
+      qualityDesc: '我们通过亲力亲为、注重速度的方法确保新鲜度。',
       pillars: {
-        farm: '农场选择',
-        farmDesc: '拥有MyGAP认证的农场，每日进行土壤到收获的审核。',
+        farm: '直接农场合作伙伴关系',
+        farmDesc: '我们直接从值得信赖的当地种植者网络采购，确保仅在农产品达到最佳成熟度时才进行收获。',
         postHarvest: '收获后处理',
-        postHarvestDesc: '温控分期区（4°C）和水冷处理。',
-        inspection: '检查协议',
-        inspectionDesc: '30%农场随机抽样和100%仓库视觉分级。',
-        coldChain: '冷链完整性',
-        coldChainDesc: '具备IoT监控的GPS追踪冷藏卡车（2-4°C）。'
-      },
-      certifications: '卓越认证',
-      certList: {
-        haccp: '合规流程',
-        smeta: '道德采购审核',
-        halal: '认证处理'
+        postHarvestDesc: '温控分期区（4°C）和水冷处理，在到达后立即锁住脆度。',
+        inspection: '视觉质量筛选',
+        inspectionDesc: '每个篮子都经过我们团队的彻底人工检查，以在送达您家门之前过滤掉缺陷。',
+        coldChain: '每日“收获到户”周期',
+        coldChainDesc: '我们标志性的速度——农产品在清晨收获并立即发货，最大限度地减少储存时间。'
       }
     },
     faqPage: {

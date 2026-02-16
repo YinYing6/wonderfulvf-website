@@ -19,10 +19,10 @@ const Footer: React.FC = () => {
               {t.footer.desc}
             </p>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/p/Wonderful-VF-Sdn-Bhd-100067877714757/" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="https://www.instagram.com/wonderful.vf/#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green transition-colors">
                 <Instagram size={20} />
               </a>
             </div>
