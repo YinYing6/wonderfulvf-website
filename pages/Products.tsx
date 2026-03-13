@@ -28,7 +28,7 @@ const ProductCard: React.FC<{ product: Product, packagingLabel: string, inquireL
         </div>
       )}
       <a 
-        href="https://wa.me/60124929882"
+        href="https://wa.link/qrj860"
         target="_blank"
         rel="noreferrer"
         className="block w-full text-center bg-brand-dark text-white py-3 rounded-lg hover:bg-brand-green transition-colors font-medium mt-auto"
