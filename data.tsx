@@ -286,9 +286,9 @@ export const getTimeline = (lang: Language): TimelineEvent[] => {
       year: '2001',
       title: t('Founding', 'Penubuhan', '成立'),
       description: t(
-        'Humble beginnings as a family enterprise founded by Mr. Quah KS, specializing in local fresh produce distribution.',
-        'Permulaan sederhana sebagai perusahaan keluarga yang diasaskan oleh Encik Quah KS, pakar dalam pengedaran hasil segar tempatan.',
-        '由Quah KS先生创立的家族企业起步，专注于当地新鲜农产品分销。'
+        'Humble beginnings as a family enterprise founded by Mr. Quah CL, specializing in local fresh produce distribution.',
+        'Permulaan sederhana sebagai perusahaan keluarga yang diasaskan oleh Encik Quah CL, pakar dalam pengedaran hasil segar tempatan.',
+        '由Quah CL先生创立的家族企业起步，专注于当地新鲜农产品分销。'
       )
     },
     {
